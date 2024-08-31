@@ -1,19 +1,17 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './index.css'
-import Home from "./pages/Home";
-import Register from "./pages/Register";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import "./index.css";
 
-function App() {
+const App: React.FC = () => {
 	return (
-		<main className="min-h-screen">
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/register" element={<Register />} />
-				</Routes>
-			</BrowserRouter>
-		</main>
+		<Router>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/dashboard" element={<Dashboard />} />
+			</Routes>
+		</Router>
 	);
-}
+};
 
 export default App;
